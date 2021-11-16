@@ -1,0 +1,16 @@
+import java.util.Scanner;
+public class DoraLovesGardening {
+    public static void main(String [] args){
+        int rows, columns, treeNumber;
+        Scanner kb = new Scanner(System.in);
+        rows=kb.nextInt();
+        columns=kb.nextInt();
+        treeNumber=kb.nextInt();
+        if (rows<=0 || columns<=0 || treeNumber<=0)
+            System.out.println("Number of rows, columns and trees should be greater than 0");
+        else if ((treeNumber>=1 && treeNumber<=rows) || treeNumber % columns==0 || treeNumber % columns == 1)
+            System.out.println("yes");
+        else
+            System.out.println("no");
+    }
+}
