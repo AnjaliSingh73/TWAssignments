@@ -1,22 +1,24 @@
 import java.util.Scanner;
 
-public class CollatzSequence {
+public class EvenOddMixedArrays {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        int n = scan.nextInt();
-        if (n <= 0)
-            System.out.println("Please enter a number greater than or equal to 1");
-        int count = 0;
-        while (n != 1) {
-            System.out.print(n + " ");
-            if ((n & 1) == 0)
-                n = n / 2;
+        int size = scan.nextInt();
+        int[] array = new int[size];
+        int evenCount = 0;
+        int oddCount = 0;
+        for (int i = 0; i < size; i++) {
+            array[i] = scan.nextInt();
+            if ((array[i] & 1) == 0)
+                evenCount += 1;
             else
-                n = 3 * n + 1;
-            count += 1;
+                oddCount += 1;
         }
-        System.out.print(1 + " ");
-        System.out.println(count);
-
+        if (evenCount == size)
+            System.out.println("Even");
+        else if (oddCount == size)
+            System.out.println("Odd");
+        else
+            System.out.println("Mixed");
     }
 }
